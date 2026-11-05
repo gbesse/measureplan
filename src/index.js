@@ -156,3 +156,19 @@ export function analyze(input, { locale = 'fr' } = {}) {
     evaluatedSubsets,
   });
 }
+
+export function budgetSweep(input, budgets, { locale = 'fr' } = {}) {
+  check(Array.isArray(budgets) && budgets.length > 0 && budgets.length <= 20, locale);
+  check(
+    Array.isArray(input.measurements) &&
+      input.measurements.filter((m) => !m.mandatory).length <= 12,
+    locale,
+  );
+  for (const budget of budgets) check(Number.isSafeInteger(budget) && budget >= 0, locale);
+  return [...new Set(budgets)]
+    .sort((a, b) => a - b)
+    .map((budget) => {
+      const result = analyze({ ...input, budget }, { locale });
+      return { budget, ...structuredClone(result) };
+    });
+}
