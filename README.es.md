@@ -71,3 +71,7 @@ Pruebas de decisiones y contraejemplos, validación de entrada, códigos de sali
 Alfa independiente bajo MIT, sin afiliación a Atomic Machines. Ejemplos y pruebas de demo sintéticos, sin equipos ni API industrial conectados. Repositorio autónomo; no publicado en npm.
 
 [Matter Compiler](https://www.atomicmachines.com/matter-compiler) · [PartCAD](https://github.com/partcad/partcad) · [Bluesky](https://blueskyproject.io/) · [OPC UA Job Management](https://reference.opcfoundation.org/specs/OPC-40001-3/full) · [QIF](https://www.nist.gov/publications/end-end-quality-information-framework-qif-technology-survey)
+
+## API 2026-11-05
+
+`budgetSweep(input, budgets, {locale})` compara hasta20 presupuestos sin modificar entrada, con máximo12 controles opcionales. Conserva viabilidad, selección y pérdida residual. Modelo sintético; hipótesis de independencia sin cambios.
