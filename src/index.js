@@ -172,3 +172,31 @@ export function budgetSweep(input, budgets, { locale = 'fr' } = {}) {
       return { budget, ...structuredClone(result) };
     });
 }
+
+export function measurementFrontier(input, budgets, { locale = 'fr' } = {}) {
+  const results = budgetSweep(input, budgets, { locale });
+  const eligible = results.filter((r) => r.feasible);
+  const unique = new Map();
+  for (const r of eligible) {
+    const key = JSON.stringify(r.selected);
+    if (!unique.has(key)) unique.set(key, r);
+  }
+  const plans = [...unique.values()];
+  const frontier = plans.filter(
+    (r) =>
+      !plans.some(
+        (o) =>
+          o !== r &&
+          o.measurementCost <= r.measurementCost &&
+          o.residualLoss <= r.residualLoss &&
+          (o.measurementCost < r.measurementCost || o.residualLoss < r.residualLoss),
+      ),
+  );
+  return {
+    frontier,
+    uniqueFeasiblePlans: plans.length,
+    infeasibleBudgets: results.filter((r) => !r.feasible).map((r) => r.budget),
+    costUnit: input.costUnit,
+    modelAssumptionsValidated: false,
+  };
+}
