@@ -75,3 +75,7 @@ Independent MIT alpha, not affiliated with Atomic Machines. Synthetic demo examp
 ## API 2026-11-05
 
 `budgetSweep(input, budgets, {locale})` compares up to20 budgets without changing the input, with at most12 optional inspections. Each point retains feasibility, selection and residual loss. Synthetic model; detection independence assumption unchanged.
+
+## 2026-11-12
+
+EN: Expose measurement-cost/residual-loss frontier and infeasible budgets in the declared model.

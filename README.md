@@ -75,3 +75,7 @@ Alpha indépendante sous MIT, non affiliée à Atomic Machines. Exemples et preu
 ## API 2026-11-05
 
 `budgetSweep(input, budgets, {locale})` compare jusqu’à20 budgets sans modifier le dossier, avec12 contrôles facultatifs maximum. Chaque point conserve faisabilité, sélection et perte résiduelle. Modèle synthétique, indépendance des détections inchangée.
+
+## 2026-11-12
+
+FR : Présenter la frontière coût de mesure/perte résiduelle et les budgets impossibles du modèle déclaré.

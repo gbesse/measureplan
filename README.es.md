@@ -75,3 +75,7 @@ Alfa independiente bajo MIT, sin afiliación a Atomic Machines. Ejemplos y prueb
 ## API 2026-11-05
 
 `budgetSweep(input, budgets, {locale})` compara hasta20 presupuestos sin modificar entrada, con máximo12 controles opcionales. Conserva viabilidad, selección y pérdida residual. Modelo sintético; hipótesis de independencia sin cambios.
+
+## 2026-11-12
+
+ES: Exponer frontera coste de medición/pérdida residual y presupuestos inviables del modelo declarado.
